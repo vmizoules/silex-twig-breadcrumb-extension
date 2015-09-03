@@ -30,11 +30,14 @@ class BreadCrumbExtension extends \Twig_Extension
      * @param \Silex\Application $app.
      * @param string $separator
      */
-    public function __construct(Application $app, string $separator='>')
+    public function __construct(Application $app, $separator=null)
     {
         $this->app = $app;
         //set options
-        $this->separator = $separator;
+        $this->separator = '>';
+        if(isset($separator)){
+            $this->separator = $separator;
+        }
         //create loader to load base template which can be overridden by user
         $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../Resources/Views');
         //add loader
