@@ -8,6 +8,7 @@ of breadcrumbs in Silex.
 - Configurable separator
 - Template override
 - Named route support
+- Foundation compatible - http://foundation.zurb.com/
 
 ## Requirements
 - Silex
