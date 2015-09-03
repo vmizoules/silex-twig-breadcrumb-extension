@@ -24,18 +24,17 @@ class BreadCrumbExtension extends \Twig_Extension
     /**
      * @var string
      */
-    protected $separator = '>';
+    protected $separator;
 
     /**
-     * @param \Silex\Application $app
+     * @param \Silex\Application $app.
+     * @param string $separator
      */
-    public function __construct(Application $app)
+    public function __construct(Application $app, string $separator='>')
     {
         $this->app = $app;
         //set options
-        if (isset($app['breadcrumbs.separator'])) {
-            $this->separator = $app['breadcrumbs.separator'];
-        }
+        $this->separator = $separator;
         //create loader to load base template which can be overridden by user
         $loader = new \Twig_Loader_Filesystem(__DIR__ . '/../../Resources/Views');
         //add loader
