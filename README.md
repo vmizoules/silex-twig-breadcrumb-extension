@@ -123,5 +123,5 @@ for the breadcrumbs is a > sign.
 If you want to change it you can pass your own separator when registering the Twig extension:
 
 ```
-$app['twig']->addExtension(new \nymo\Twig\Extension\BreadCrumbExtension($app),array("breadcrumbs.separator" => "::"));
+$app['twig']->addExtension(new \nymo\Twig\Extension\BreadCrumbExtension($app, "::"));
 ```
